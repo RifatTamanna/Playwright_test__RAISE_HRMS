@@ -31,8 +31,22 @@ test('Select Values from Dropdown', async function ({page}) {
 
     let allElements=await state.$$('li')
 
+    let ddValues=false
+
     for(let i=0; i<allElements.length; i++){
+
+        let element=allElements[i]
+        let value=await element.textContent()
+        console.log("Dropdown Values: " + value)
+        
+        if(value.includes("Bangla"))
+            {
+            ddValues=true
+            break
+        }
+        console.log("Bangla is present in the dropdown", value);
 
         
     }
+    await expect(ddValues).toBeTruthy()
 })
