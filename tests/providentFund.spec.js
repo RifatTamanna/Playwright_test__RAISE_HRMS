@@ -18,6 +18,7 @@ test('Provident Fund', async function ({page}) {
     await page.waitForTimeout(5000)
 
     //Need one report comment then run the test otherwise 2 reports unable to run at a time.
+
     //GPF Statement Report
     await page.getByText('GPF Reports', { exact: true }).click()
     await page.locator("//select[@class='form-control text-uppercase']").click()
@@ -34,7 +35,6 @@ test('Provident Fund', async function ({page}) {
     await page.getByText('GPF Reports', { exact: true }).click()
     await page.locator("//select[@class='form-control text-uppercase']").click()
     await page.locator('select').selectOption({ label: 'PF SETTLEMENT APPLICATION' })
-
     await page.locator('input[type="search"]').fill('025131')
     await page.getByRole('option', { name: '02513' }).click()
     await page.getByRole('button', { name: 'Generate Report' }).click() 
