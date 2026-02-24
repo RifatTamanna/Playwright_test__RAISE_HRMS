@@ -13,7 +13,7 @@ class LoginPage
         await this.page.fill(this.username,"025131",{delay:100})
         await this.page.fill(this.password,"Raise@1234#",{delay:100})
         await this.page.click(this.loginButton)
-        await this.page.pause()
+        // await this.page.pause()
     }
 }
 module.exports = LoginPage;
