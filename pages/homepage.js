@@ -18,6 +18,8 @@ class HomePage
     {
         await this.avatar.click()
         await this.logoutoption.click()
+        await this.page.pause()
+        await expect(this.page).toHaveURL("https://dev.cnsbd.com:5050/") //assertion to check user is navigated to login page after logout
     }
 }
 
